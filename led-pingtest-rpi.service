@@ -1,0 +1,25 @@
+[Unit]
+Description=A simple Python script for the RPi that blinks red/green led depending on the outome of a ping test
+After=multi-user.target
+
+[Service]
+# Edit the directory below if you placed the folder elsewhere
+WorkingDirectory=/opt/rpi-led-pingtest/
+Type=simple
+
+# If you have permission issues, you might want to uncomment and edit the rows below
+# User=USER
+# Group=GROUP
+
+# Edit the arguments according to your needs
+ExecStart=/usr/bin/python3 main.py
+
+# Restart options
+Restart=always
+RestartSec=5
+
+# This ensures a clean exit when the service is stopped
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
