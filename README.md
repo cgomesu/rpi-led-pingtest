@@ -2,7 +2,7 @@
 This is a simple python script for the Raspberry Pi to run a ping command and blink a GREEN LED if the host is up and otherwise, blink a RED LED.  LEDs are connected to the RPI via its GPIO pins.
 
 # Default wiring
-For both LEDs, make sure to use an approriate current limiting resistor.
+For both LEDs, make sure to use an approriate limiting resistor.
 
 * RED LED: GPIO **#18**
 * GREEN LED: GPIO **#15**
@@ -21,7 +21,13 @@ python3 main.py
 ```
 
 # Usage
-By default, the script will ping **Google's 8.8.8.8** to check for Internet connectivity **every 5 seconds**.  To change the host, use the argument `--pinghost` and to change the ping test period, use the argument `--pingtime`.  Example, ping IP=1.1.1.1 every 15 seconds: `python3 main.py --pinghost=1.1.1.1 --pingtime=15`.  It's possible to use hostnames as well (anything that `man ping` will accept as valid).  For additional information, use the argument `--help`, per usual.
+By default, the script will ping **Google's 8.8.8.8** to check for Internet connectivity **every 5 seconds**.  To change the host, use the argument `--pinghost` and to change the ping test period, use the argument `--pingtime`.  
+
+# Example
+* ping IP=1.1.1.1 every 15 seconds:
+`python3 main.py --pinghost=1.1.1.1 --pingtime=15`  
+
+It's possible to use hostnames as well (anything that `man ping` will accept as valid).  For additional information, use the argument `--help`, per usual.
 
 # Running as a service (systemd)
 ```
