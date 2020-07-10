@@ -2,7 +2,7 @@
 
 # Description: A simple Python script for the RPi that blinks red/green led depending on the outome of a ping test
 # Author: https://github.com/cgomesu/
-# Disclaimer: The author does not provide any source of warranty
+# Disclaimer: The author does not provide any sort of warranty
 
 # Import needed modules
 import RPi.GPIO as GPIO
